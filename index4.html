@@ -1,0 +1,145 @@
+<html>
+    <head>
+    <title>Navigation page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #c64e4e;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: rgb(224, 126, 142);
+        }
+
+        .content {
+            margin-left: 250px; /* Same as the width of the sidenav */
+            padding: 20px;
+        }
+        #default-header{
+            color : rgb(151, 44, 62);
+            
+        }
+        .cloth-img{
+            width : 200px;
+            height : 200px;
+            padding: 20px;
+            display : flex;
+            display: inline-block;
+        }
+        .container{
+            width : 300px;
+            height: 300px;
+            margin: 5px;
+            display: flex;
+            display: inline-block;
+            border : 2px solid rgb(151, 44, 62);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .sleeve-length{
+            width : 150px;
+            height : 100px;
+            color : white;
+            background-color:rgb(230, 109, 129);
+            margin: 10px;
+            border: none;
+            display: flex;
+            display: inline-block;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="sidenav">
+    <div>
+        <a href="#" onclick="changeContent('top_cloth')">Top cloth</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('bottom_cloth')">Bottom cloth</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('sleeve_length')">Sleeve length</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('sleeve_type')">Sleeve type</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('neck_type')">Neck type</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('back_neck')">Back  neck</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('dress_length')">Dress length</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('size')">Size </a>
+    </div>
+</div>
+
+<div class="content" id="pageContent"><div><h1>Top Cloth</h1><div class="container"><img class="cloth-img" src="cloth1.jpeg" alt="Bottom Cloth"><p>Cloth 1</p></div><div class="container"><img class="cloth-img" src="cloth2.jpeg" alt="Bottom Cloth"><p>Cloth 2</p></div><div class="container"><img class="cloth-img" src="silkkk.jpeg" alt="Bottom Cloth"><p>Silk Cloth</p></div><div class="container"><img class="cloth-img" src="crepe.jpg" alt="Bottom Cloth"><p>Crepe Cloth</p></div></div></div>
+
+<script>
+    function changeContent(page) {
+        var content = document.getElementById("pageContent");
+        switch (page) {
+            case 'top_cloth':
+                content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><img class='cloth-img' src='cloth1.jpeg' alt='Bottom Cloth'><p>Lenin cloth</p></div><div class='container'><img class='cloth-img' src='cloth2.jpeg' alt='Bottom Cloth'><p>Wool cloth</p></div><div class='container'><img class='cloth-img' src='silkkk.jpeg' alt='Bottom Cloth'><p>Silk Cloth</p></div><div class='container'><img class='cloth-img' src='crepe.jpg' alt='Bottom Cloth'><p>Crepe Cloth</p></div><div class='container'><img class='cloth-img' src='velvet.jpg' alt='Bottom Cloth'><p>Velvet Cloth</p></div><div class='container'><img class='cloth-img' src='chiffon.jpg' alt='Bottom Cloth'><p>Chiffon Cloth</p></div><div class='container'><img class='cloth-img' src='cotton.jpg' alt='Bottom Cloth'><p>Cotton Cloth</p></div></div>";
+                break;
+            case 'bottom_cloth':
+            content.innerHTML = "<div><h1>Bottom Cloth</h1><div class='container'><img class='cloth-img' src='cloth1.jpeg' alt='Bottom Cloth'><p>Lenin cloth</p></div><div class='container'><img class='cloth-img' src='cloth2.jpeg' alt='Bottom Cloth'><p>Wool cloth</p></div><div class='container'><img class='cloth-img' src='silkkk.jpeg' alt='Bottom Cloth'><p>Silk Cloth</p></div><div class='container'><img class='cloth-img' src='crepe.jpg' alt='Bottom Cloth'><p>Crepe Cloth</p></div><div class='container'><img class='cloth-img' src='velvet.jpg' alt='Bottom Cloth'><p>Velvet Cloth</p></div><div class='container'><img class='cloth-img' src='chiffon.jpg' alt='Bottom Cloth'><p>Chiffon Cloth</p></div><div class='container'><img class='cloth-img' src='cotton.jpg' alt='Bottom Cloth'><p>Cotton Cloth</p></div></div>";
+                break;
+            case 'sleeve_length':
+            // content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><img class='cloth-img' src='cloth1.jpeg' alt='Bottom Cloth'><p>Lenin cloth</p></div><div class='container'><img class='cloth-img' src='cloth2.jpeg' alt='Bottom Cloth'><p>Wool cloth</p></div><div class='container'><img class='cloth-img' src='silkkk.jpeg' alt='Bottom Cloth'><p>Silk Cloth</p></div><div class='container'><img class='cloth-img' src='crepe.jpg' alt='Bottom Cloth'><p>Crepe Cloth</p></div></div>";
+                content.innerHTML = "<div><button class='sleeve-length'>Short sleeve</button><button class='sleeve-length'>Full sleeve</button><button class='sleeve-length'>Three fourth sleeve</button><button class='sleeve-length'>Half sleeve</button></div>"
+                break;
+            case 'sleeve_type':
+            content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><img class='cloth-img' src='hand1.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand2.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand3.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand4.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand5.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand6.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand7.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand8.jpg' alt='Bottom Cloth'></div><div class='container'><img class='cloth-img' src='hand9.jpg' alt='Bottom Cloth'></div></div>";
+                break;
+            case 'neck_type':
+            content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><img class='cloth-img' src='neck1.jpg' alt='Bottom Cloth'><p>Slide necktype</p></div><div class='container'><img class='cloth-img' src='neck2.jpg' alt='Bottom Cloth'><p>v neck</p></div><div class='container'><img class='cloth-img' src='neck3.jpg' alt='Bottom Cloth'><p>w neck</p></div><div class='container'><img class='cloth-img' src='neck4.jpg' alt='Bottom Cloth'><p>stright neck</p></div><div class='container'><img class='cloth-img' src='neck5.jpg' alt='Bottom Cloth'><p>offshoulders neck</p></div><div class='container'><img class='cloth-img' src='neck6.jpg' alt='Bottom Cloth'><p>net type</p></div><div class='container'><img class='cloth-img' src='neck7.jpg' alt='Bottom Cloth'><p>full neck</p></div><div class='container'><img class='cloth-img' src='neck8.jpg' alt='Bottom Cloth'><p>high neck</p></div></div>";
+                break;  
+            case 'back_neck':
+            content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><img class='cloth-img' src='back1.jpg' alt='Bottom Cloth'><p>Slide necktype</p></div><div class='container'><img class='cloth-img' src='back2.jpg' alt='Bottom Cloth'><p>v neck</p></div><div class='container'><img class='cloth-img' src='back3.jpg' alt='Bottom Cloth'><p>w neck</p></div><div class='container'><img class='cloth-img' src='back4.jpg' alt='Bottom Cloth'><p>stright neck</p></div><div class='container'><img class='cloth-img' src='back5.jpg' alt='Bottom Cloth'><p>offshoulders neck</p></div><div class='container'><img class='cloth-img' src='back6.jpg' alt='Bottom Cloth'><p>net type</p></div><div class='container'><img class='cloth-img' src='back7.jpg' alt='Bottom Cloth'><p>full neck</p></div><div class='container'><img class='cloth-img' src='back8.jpg' alt='Bottom Cloth'><p>high neck</p></div></div>";
+                break;
+            case 'dress_length':
+            content.innerHTML = "<div><button class='sleeve-length'>Micro</button><button class='sleeve-length'>Mini</button><button class='sleeve-length'>Above knee</button><button class='sleeve-length'>Knee</button><button class='sleeve-length'>Below Knee</button><button class='sleeve-length'>Midi</button><button class='sleeve-length'>Ballerina</button><button class='sleeve-length'>Maxi</button><button class='sleeve-length'>Floor</button></div>"
+                break;
+                case 'size':
+            content.innerHTML = "<div><button class='sleeve-length'>XS</button><button class='sleeve-length'>S</button><button class='sleeve-length'>M</button><button class='sleeve-length'>L</button><button class='sleeve-length'>XL</button><button class='sleeve-length'>XXL</button><button class='sleeve-length'>XXXL</button></div>"
+                break;
+            default:
+                content.innerHTML = "<h1>Page Not Found</h1><p>The requested page could not be found.</p>";
+        }
+    }
+    
+</script>
+
+
+
+</body></html>

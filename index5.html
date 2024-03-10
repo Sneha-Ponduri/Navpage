@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #c64e4e;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: rgb(224, 126, 142);
+        }
+
+        .content {
+            margin-left: 250px; /* Same as the width of the sidenav */
+            padding: 20px;
+        }
+        #default-header{
+            color : rgb(151, 44, 62);
+            
+        }
+        .cloth-img{
+            width : 200px;
+            height : 200px;
+            padding: 20px;
+            display : flex;
+            display: inline-block;
+        }
+        .container{
+            width : 300px;
+            height: 300px;
+            margin: 5px;
+            display: flex;
+            display: inline-block;
+            border : 2px solid rgb(151, 44, 62);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .sleeve-length{
+            width : 150px;
+            height : 100px;
+            color : white;
+            background-color:rgb(230, 109, 129);
+            margin: 10px;
+            border: none;
+            display: flex;
+            display: inline-block;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="sidenav">
+    <div>
+        <a href="#" onclick="changeContent('top_cloth')">Top cloth</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('bottom_cloth')">Bottom cloth</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('sleeve_length')">Sleeve length</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('sleeve_type')">Sleeve type</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('neck_type')">Neck type</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('back_neck')">Back  neck</a>
+    </div>
+    <div>
+        <a href="#" onclick="changeContent('dress_length')">Dress length</a>
+    </div>
+</div>
+
+<div class="content" id="pageContent"></div>
+
+<script>
+    function changeContent(page) {
+        var content = document.getElementById("pageContent");
+        switch (page) {
+            case 'top_cloth':
+                content.innerHTML = "<div><h1>Top Cloth</h1><div class='container'><input type='file' accept='image/*' id='top_cloth_image'><p id='top_cloth_image_name'></p></div></div>";
+                break;
+            case 'bottom_cloth':
+                content.innerHTML = "<div><h1>Bottom Cloth</h1><div class='container'><input type='file' accept='image/*' id='bottom_cloth_image'><p id='bottom_cloth_image_name'></p></div></div>";
+                break;
+            case 'sleeve_length':
+                content.innerHTML = "<div><h1>Sleeve Length</h1><div class='container'><input type='file' accept='image/*' id='sleeve_length_image'><p id='sleeve_length_image_name'></p></div></div>";
+                break;
+            case 'sleeve_type':
+                content.innerHTML = "<div><h1>Sleeve Type</h1><div class='container'><input type='file' accept='image/*' id='sleeve_type_image'><p id='sleeve_type_image_name'></p></div></div>";
+                break;
+            case 'neck_type':
+                content.innerHTML = "<div><h1>Neck Type</h1><div class='container'><input type='file' accept='image/*' id='neck_type_image'><p id='neck_type_image_name'></p></div></div>";
+                break;
+            case 'back_neck':
+                content.innerHTML = "<div><h1>Back Neck</h1><div class='container'><input type='file' accept='image/*' id='back_neck_image'><p id='back_neck_image_name'></p></div></div>";
+                break;
+            case 'dress_length':
+                content.innerHTML = "<div><h1>Dress Length</h1><div class='container'><input type='file' accept='image/*' id='dress_length_image'><p id='dress_length_image_name'></p></div></div>";
+                break;
+            default:
+                content.innerHTML = "<h1>Page Not Found</h1><p>The requested page could not be found.</p>";
+        }
+    }
+
+    // Function to handle file selection and display file name
+    document.querySelectorAll('input[type=file]').forEach(item => {
+        item.addEventListener('change', event => {
+            const file = event.target.files[0];
+            const container = event.target.parentNode;
+            const fileNameParagraph = container.querySelector('p');
+            fileNameParagraph.textContent = file ? file.name : '';
+        });
+    });
+</script>
+
+</body>
+</html>
